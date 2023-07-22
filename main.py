@@ -5,7 +5,7 @@ import requests
 
 # from dummy_data import dummy_data
 
-response = requests.get('https://opentdb.com/api.php?amount=10')
+response = requests.get('https://opentdb.com/api.php?amount=10&category=18')
 response.raise_for_status()
 question_data = response.json()['results']
 
@@ -31,7 +31,7 @@ print('You\'ve completed the quiz')
 print(f'Your final score is: {quiz.score}/{quiz.question_number}')
 
 if quiz.score <= 3:
-    print('You are a loser 🤨 Try again!')
+    print('You are 🤨 Try again!')
 elif quiz.score <= 5:
     print('You need to study more 💻 Never give up!')
 elif quiz.score <= 8:
